@@ -57,4 +57,19 @@ public abstract class Train {
 	{
 		return "Serial No: " + serialNo + "; weight: " + weight + "; label: " + label;
 	}
+	
+	public String toString(String format){
+		if("serialize".equals(format))
+		{
+			return String.format(
+					"%s#%f#%s#%f#",
+					getSerialNo(),
+					getWeight(),
+					getLabel(),
+					getCapacity()
+					);
+		}else{
+			return "";
+		}
+	};
 }

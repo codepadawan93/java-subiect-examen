@@ -76,6 +76,27 @@ public class FreightTrain extends Train {
 		}
 		return retval;
 	}
-
 	
+	@Override
+	public String toString(String format)
+	{
+		if("serialize".equals(format))
+		{
+			String stringified = String.format(
+					"%s#%f#%s#%f#",
+					getSerialNo(),
+					getWeight(),
+					getLabel(),
+					getCapacity()
+					);
+			
+			for(String s : freightSn)
+			{
+				stringified += s + ",";
+			}
+			return stringified;
+		}else{
+			return "";
+		}
+	}
 }
